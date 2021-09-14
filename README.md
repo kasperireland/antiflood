@@ -1,5 +1,5 @@
 # antiflood
-# Anti-Flood: DoS, DDoS, Brute Force, SYN/UDP Flood
+# antiflood protects you against: DoS, DDoS, Brute Force, and SYN/UDP Flood attacks.
 > Usage
 ``` 
 chmod +x antiflood.sh
