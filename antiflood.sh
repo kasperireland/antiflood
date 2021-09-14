@@ -32,7 +32,7 @@ checkspoof=$(/sbin/iptables -t mangle -L | /bin/grep -o "224.0.0.0/3" > /dev/nul
 
 checkroot() {
     if [[ "$(id -u)" -ne 0 ]]; then
-      printf ".:: Please, run this program as root!\n"
+      printf ".:: Please run this program as root!\n"
       exit 1
     fi
 }
