@@ -11,17 +11,16 @@ printf "|  _  ||  |  |  |  |   |  | |    | |     T|     ||     ||     |\n"
 printf "|  |  ||  |  |  |  |   j  l |  T   |     |l     !l     !|     |\n"
 printf "l__j__jl__j__j  l__j  |____jl__j   l_____j \___/  \___/ l_____j\n"
 printf "\n\e[0m"                                                               
-printf "\e[101m::\e[1;77m Protection against: DoS, DDoS, UDP/TCP Flood, BruteForce ::\e[0m\n\n"
+printf "\e[101m::\e[1;77m Protection against: DoS, DDoS, UDP/TCP Flood, Bruteforce ::\e[0m\n\n"
 
 
 }
 
 # install iptables-persistent if not installed
-if [ $(dpkg-query -W -f='${Status}' iptables-persistent 2>/dev/null | grep -c "ok installed") -eq 0 ];
+if $(dpkg-query -W -f='${Status}' iptables-persistent 2>/dev/null | grep -q "IPTables Persistent is installed already.");
 then
   apt-get install iptables-persistent;
 fi
-
 
 checkbrute=$(/sbin/iptables -L | /bin/grep -o "antibrute" > /dev/null;echo "$?") >&2
 checkicmp=$(/sbin/iptables -t mangle -L | /bin/grep -o "icmp" > /dev/null; echo "$?") >&2
