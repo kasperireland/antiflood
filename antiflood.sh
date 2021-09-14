@@ -1,5 +1,4 @@
 #!/bin/bash
-# coded by @thelinuxchoice (Instagram)
 
 banner() {
 
@@ -12,7 +11,7 @@ printf "|  _  ||  |  |  |  |   |  | |    | |     T|     ||     ||     |\n"
 printf "|  |  ||  |  |  |  |   j  l |  T   |     |l     !l     !|     |\n"
 printf "l__j__jl__j__j  l__j  |____jl__j   l_____j \___/  \___/ l_____j\n"
 printf "\n\e[0m"                                                               
-printf "\e[101m::\e[1;77m Protection against: DoS, DDoS, UDP/TCP Flood, BruteForcer ::\e[0m\n\n"
+printf "\e[101m::\e[1;77m Protection against: DoS, DDoS, UDP/TCP Flood, BruteForce ::\e[0m\n\n"
 
 
 }
