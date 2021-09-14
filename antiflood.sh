@@ -39,7 +39,7 @@ checkroot() {
 readconfig() {
 
     if [ ! -f "/etc/antiflood.cfg" ]; then
-        printf "\e[1;77m:: Creating Anti Flood config file (/etc/antiflood.cfg)... \e[0m"
+        printf "\e[1;77m:: Creating Anti-Flood config file (/etc/antiflood.cfg)... \e[0m"
         /usr/bin/touch /etc/antiflood.cfg
         printf "antibrute=y\n" >> /etc/antiflood.cfg
         printf "ports=21,22,23,25,110,143,443\n" >> /etc/antiflood.cfg
@@ -66,7 +66,7 @@ readconfig
 source /etc/antiflood.cfg
 
        
-       #Anti Brute Force
+       #Anti Bruteforce
 
             if [[ "$antibrute" == "y" || "$antibrute" == "yes" || "$antibrute" == "Y" ]] && [[ "$checkbrute" == "1" ]]; then
 
@@ -86,7 +86,7 @@ source /etc/antiflood.cfg
             fi
 
 
-       #drop icmp
+       #drop icmp protocol
             if [[ "$icmp" == "y" || "$icmp" == "yes" || "$icmp" == "Y"  ]] && [[ "$checkicmp" == "1" ]]; then
        /sbin/iptables -t mangle -A PREROUTING -p icmp -j DROP
             fi
@@ -183,7 +183,7 @@ source /etc/antiflood.cfg
 printf "\e[1;92m[*] Running: \e[0m\n"
 
 if [[ "$checkicmp" == "0" ]]; then
-printf "\e[1;77m:: Drop icmp (ping request) \n\e[0m"
+printf "\e[1;77m:: Drop icmp protocol (ping request) \n\e[0m"
 fi
 
 if [[ "$checkudp" == "0" ]]; then
