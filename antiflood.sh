@@ -16,6 +16,12 @@ printf "\e[101m::\e[1;77m Protection against: DoS, DDoS, UDP/TCP Flood, BruteFor
 
 }
 
+# install iptables-persistent if not installed
+if [ $(dpkg-query -W -f='${Status}' iptables-persistent 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  apt-get install iptables-persistent;
+fi
+
 
 checkbrute=$(/sbin/iptables -L | /bin/grep -o "antibrute" > /dev/null;echo "$?") >&2
 checkicmp=$(/sbin/iptables -t mangle -L | /bin/grep -o "icmp" > /dev/null; echo "$?") >&2
