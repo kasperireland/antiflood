@@ -4,7 +4,7 @@
 ``` 
 wget https://git.io/JzqkT -O antiflood.sh && chmod +x antiflood.sh
 ```
-Options:
+> Options
 ```
 sudo ./antiflood --start
 sudo ./antiflood --config
