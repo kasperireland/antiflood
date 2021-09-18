@@ -6,7 +6,7 @@ wget https://git.io/JzqkT -O antiflood.sh && chmod +x antiflood.sh
 ```
 > Options
 ```
-sudo ./antiflood --start
-sudo ./antiflood --config
-sudo ./antiflood --stop
+sudo ./antiflood.sh --start
+sudo ./antiflood.sh --config
+sudo ./antiflood.sh --stop
 ```
