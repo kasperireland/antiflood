@@ -112,7 +112,7 @@ source /etc/antiflood.cfg
             if [[ "$invalid" == "y" || "$invalid" == "yes" || "$invalid" == "Y" ]] && [[ "$checkinvalid" == "1" ]]; then
        /sbin/iptables -t mangle -A PREROUTING -m conntrack --ctstate INVALID -j DROP
             fi
-       #drop tcp packets that are new and are not SYN
+       #drop TCP packets that are new and are not SYN
             if [[ "$new" == "y" || "$new" == "yes" || "$new" == "Y" ]] && [[ "$checknew" == "1" ]]; then
        /sbin/iptables -t mangle -A PREROUTING  -p tcp ! --syn -m conntrack --ctstate NEW -j DROP
             fi
@@ -163,7 +163,7 @@ source /etc/antiflood.cfg
        printf "Limit RST packets: %s\n" $rst
        printf "Drop invalid packets: %s\n" $invalid
        printf "Drop tcp packets that are new and are not SYN: %s\n" $new
-       printf "Drop SYN packets with suspicios MSS value: %s\n" $mss
+       printf "Drop SYN packets with suspicious MSS value: %s\n" $mss
        printf "Limit new TCP connections per second per source IP: %s\n" $sourceipsec
        printf "Block packets with bogus TCP flags: %s\n" $bogus
        printf "Block spoofed packets: %s\n" $spoof
